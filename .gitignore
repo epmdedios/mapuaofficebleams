@@ -21,3 +21,4 @@ obj/Debug/netcoreapp3.0/officebleams.csproj.FileListAbsolute.txt
 obj/Debug/netcoreapp3.0/officebleams.dll
 obj/Debug/netcoreapp3.0/officebleams.exe
 obj/Debug/netcoreapp3.0/officebleams.pdb
+.vscode/settings.json

@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="officebleams_lib.WindowButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:officebleams_lib"
+             x:Name="windowButton"
+             mc:Ignorable="d"
+             d:DesignHeight="36"
+             d:DesignWidth="50">
+    <UserControl.Resources>
+        <Storyboard x:Key="onHighlight">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                          Storyboard.TargetName="windowButtonGrid">
+                <EasingColorKeyFrame KeyTime="0"
+                                     Value="Transparent">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" 
+                                     Value="{Binding Highlight, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="offHighlight">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                          Storyboard.TargetName="windowButtonGrid">
+                <SplineColorKeyFrame KeyTime="0" 
+                                     Value="{Binding Highlight, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"/>
+                <SplineColorKeyFrame KeyTime="0:0:0.2" 
+                                     Value="Transparent"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+            <BeginStoryboard x:Name="onHighlight_BeginStoryboard" 
+                             Storyboard="{StaticResource onHighlight}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+            <BeginStoryboard x:Name="offHighlight_BeginStoryboard" Storyboard="{StaticResource offHighlight}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid x:Name="windowButtonGrid" 
+          Width="50"
+          Background="Transparent">
+        <TextBlock x:Name="textBlock"
+                   Foreground="{StaticResource contrastBrush}"
+                   FontFamily="Segoe MDL2 Assets"
+                   FontSize="11"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="{Binding Icon, ElementName=windowButton}"/>
+    </Grid>
+</UserControl>

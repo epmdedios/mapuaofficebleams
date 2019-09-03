@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="officebleams_lib.ProfilePopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:officebleams_lib"
+             x:Name="profilePopup"
+             mc:Ignorable="d">
+    <Grid Background="{StaticResource baseChromeBrush}"
+          MinWidth="200"
+          MaxWidth="250" 
+          Margin="10">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="10" 
+                              Direction="0"
+                              Opacity="0.8"
+                              RenderingBias="Quality" 
+                              ShadowDepth="0"/>
+        </Grid.Effect>
+        <DockPanel>
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Margin="10">
+                <TextBlock Style="{StaticResource textHeadingStyle}"
+                           Text="{Binding Username, ElementName=profilePopup}"
+                           FontSize="28"
+                           TextTrimming="CharacterEllipsis"/>
+                <TextBlock Style="{StaticResource textControlStyle}"
+                           Text="{Binding Company, ElementName=profilePopup}"
+                           FontSize="13"
+                           TextTrimming="CharacterEllipsis"/>
+                <DockPanel x:Name="buttonDock"
+                           Margin="0,10,0,0">
+                    <local:AppButton x:Name="switchButton"
+                                     Text="Switch account" 
+                                     MouseLeftButtonUp="OnMouseClickSwitchButton"/>
+                    <local:AppButton x:Name="signOutButton"
+                                     Text="Sign out"
+                                     Margin="10,0,0,0" 
+                                     MouseLeftButtonUp="OnMouseClickSignOutButton"/>
+                </DockPanel>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

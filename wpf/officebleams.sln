@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "officebleams-gui", "officebleams-gui\officebleams-gui.csproj", "{6624D114-B1FB-4860-98B4-1109E21EDE98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "officebleams-lib", "officebleams-lib\officebleams-lib.csproj", "{30857B60-E692-404A-B7B5-2A2A0A2E2D08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6624D114-B1FB-4860-98B4-1109E21EDE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6624D114-B1FB-4860-98B4-1109E21EDE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6624D114-B1FB-4860-98B4-1109E21EDE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6624D114-B1FB-4860-98B4-1109E21EDE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30857B60-E692-404A-B7B5-2A2A0A2E2D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30857B60-E692-404A-B7B5-2A2A0A2E2D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30857B60-E692-404A-B7B5-2A2A0A2E2D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30857B60-E692-404A-B7B5-2A2A0A2E2D08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23273AAF-A743-419C-97F9-42665DDE826A}
+	EndGlobalSection
+EndGlobal

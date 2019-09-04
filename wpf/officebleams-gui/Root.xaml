@@ -104,7 +104,7 @@
                 </Grid>
             </Border>
             <Grid x:Name="contentGrid"
-                  Background="{StaticResource baseBrush}"
+                  Background="{StaticResource baseContentBrush}"
                   Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition x:Name="titleArea"
@@ -128,93 +128,188 @@
                     <Grid x:Name="contentScrollingGrid">
                         <StackPanel>
                             <Grid x:Name="dashboardContentGrid"
-                                  Height="360"
+                                  Height="370"
                                   Visibility="Collapsed">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition x:Name="nodeArea"
+                                    <ColumnDefinition x:Name="proximityDashboard"
                                                       Width="*"/>
-                                    <ColumnDefinition x:Name="beaconArea"
-                                                      Width="*"/>
-                                    <ColumnDefinition x:Name="assetArea"
+                                    <ColumnDefinition x:Name="node1Dashboard"
                                                       Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Grid x:Name="nodeGrid1"
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Name="node2Dashboard"
+                                                   Height="*"/>
+                                    <RowDefinition x:Name="node3Dashboard"
+                                                   Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid x:Name="proximityGrid"
                                       Grid.Column="0">
+                                    <Grid.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#7F646464" Offset="0"/>
+                                            <GradientStop Color="#34323232" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Grid.Background>
                                     <StackPanel HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
-                                        <TextBlock x:Name="nodeIcon1"
+                                        <TextBlock x:Name="proximityIcon"
                                                    FontSize="50"
                                                    Style="{StaticResource iconStyle}"
-                                                   Text="&#xE704;"
+                                                   Text="&#xE781;"
                                                    TextAlignment="Center"/>
-                                        <TextBlock x:Name="nodeText1"
+                                        <TextBlock x:Name="proximityText"
+                                                   FontSize="17"
+                                                   Margin="0,20"
+                                                   Style="{StaticResource textHeadingStyle}"
+                                                   Text="PROXIMITY"
+                                                   TextAlignment="Center"/>
+                                        <TextBlock x:Name="proximityStatus"
+                                                   FontSize="13"
+                                                   Style="{StaticResource textControlStyle}"
+                                                   Text="Not connected."
+                                                   TextAlignment="Center"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid x:Name="node1Grid"
+                                      Grid.Column="1">
+                                    <Grid.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop>
+                                                <GradientStop.Color>
+                                                    <Color A="50" B="225" G="80" R="50"/>
+                                                </GradientStop.Color>
+                                            </GradientStop>
+                                            <GradientStop Offset="1">
+                                                <GradientStop.Color>
+                                                    <Color A="10" B="225" G="80" R="50"/>
+                                                </GradientStop.Color>
+                                            </GradientStop>
+                                        </RadialGradientBrush>
+                                    </Grid.Background>
+                                    <StackPanel HorizontalAlignment="Center"
+                                                VerticalAlignment="Center">
+                                        <TextBlock x:Name="node1Icon"
+                                                   FontSize="50"
+                                                   Foreground="{StaticResource neutralBrush}"
+                                                   Style="{StaticResource iconStyle}"
+                                                   Text="&#xE702;"
+                                                   TextAlignment="Center"/>
+                                        <TextBlock x:Name="node1Text"
                                                    FontSize="17"
                                                    Margin="0,20"
                                                    Style="{StaticResource textHeadingStyle}"
                                                    Text="BLE NODE 1"
                                                    TextAlignment="Center"/>
-                                        <TextBlock x:Name="nodeStatus1"
+                                        <TextBlock x:Name="node1Status"
                                                    FontSize="13"
                                                    Style="{StaticResource textControlStyle}"
-                                                   Text="Connecting..."
+                                                   Text="Not connected."
                                                    TextAlignment="Center"/>
                                     </StackPanel>
                                 </Grid>
-                                <Grid x:Name="nodeGrid2"
-                                      Grid.Column="1">
+                                <Grid x:Name="node2Grid"
+                                      Grid.Row="1">
+                                    <Grid.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Offset="0">
+                                                <GradientStop.Color>
+                                                    <Color A="40" B="80" G="225" R="50"/>
+                                                </GradientStop.Color>
+                                            </GradientStop>
+                                            <GradientStop Offset="1">
+                                                <GradientStop.Color>
+                                                    <Color A="10" B="80" G="225" R="50"/>
+                                                </GradientStop.Color>
+                                            </GradientStop>
+                                        </RadialGradientBrush>
+                                    </Grid.Background>
                                     <StackPanel HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
-                                        <TextBlock x:Name="nodeIcon2"
+                                        <TextBlock x:Name="node2Icon"
                                                    FontSize="50"
+                                                   Foreground="{StaticResource goodBrush}"
                                                    Style="{StaticResource iconStyle}"
-                                                   Text="&#xE704;"
+                                                   Text="&#xE702;"
                                                    TextAlignment="Center"/>
-                                        <TextBlock x:Name="nodeText2"
+                                        <TextBlock x:Name="node2Text"
                                                    FontSize="17"
                                                    Margin="0,20"
                                                    Style="{StaticResource textHeadingStyle}"
                                                    Text="BLE NODE 2"
                                                    TextAlignment="Center"/>
-                                        <TextBlock x:Name="nodeStatus2"
+                                        <TextBlock x:Name="node2Status"
                                                    FontSize="13"
                                                    Style="{StaticResource textControlStyle}"
-                                                   Text="Connecting..."
+                                                   Text="Not connected."
                                                    TextAlignment="Center"/>
                                     </StackPanel>
                                 </Grid>
-                                <Grid x:Name="nodeGrid3"
-                                      Grid.Column="2">
+                                <Grid x:Name="node3Grid"
+                                      Grid.Column="1"
+                                      Grid.Row="1">
+                                    <Grid.Background>
+                                        <RadialGradientBrush>
+                                            <GradientStop Offset="0">
+                                                <GradientStop.Color>
+                                                    <Color A="50" B="80" G="50" R="225"/>
+                                                </GradientStop.Color>
+                                            </GradientStop>
+                                            <GradientStop Offset="1">
+                                                <GradientStop.Color>
+                                                    <Color A="10" B="80" G="50" R="225"/>
+                                                </GradientStop.Color>
+                                            </GradientStop>
+                                        </RadialGradientBrush>
+                                    </Grid.Background>
                                     <StackPanel HorizontalAlignment="Center"
                                                 VerticalAlignment="Center">
-                                        <TextBlock x:Name="nodeIcon3"
+                                        <TextBlock x:Name="node3Icon"
                                                    FontSize="50"
+                                                   Foreground="{StaticResource alertBrush}"
                                                    Style="{StaticResource iconStyle}"
-                                                   Text="&#xE704;"
+                                                   Text="&#xE702;"
                                                    TextAlignment="Center"/>
-                                        <TextBlock x:Name="nodeText3"
+                                        <TextBlock x:Name="node3Text"
                                                    FontSize="17"
                                                    Margin="0,20"
                                                    Style="{StaticResource textHeadingStyle}"
                                                    Text="BLE NODE 3"
                                                    TextAlignment="Center"/>
-                                        <TextBlock x:Name="nodeStatus3"
+                                        <TextBlock x:Name="node3Status"
                                                    FontSize="13"
                                                    Style="{StaticResource textControlStyle}"
-                                                   Text="Connecting..."
+                                                   Text="Not connected."
                                                    TextAlignment="Center"/>
                                     </StackPanel>
                                 </Grid>
                             </Grid>
                             <Grid x:Name="mapContentGrid"
+                                  Height="370"
                                   Visibility="Visible">
+                                <Grid.Background>
+                                    <LinearGradientBrush EndPoint="0,1">
+                                        <GradientStop Color="#34323232" Offset="0.5"/>
+                                        <GradientStop Color="#00000000" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="200"/>
-                                    <ColumnDefinition Width="5*" />
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0"
-                                            Margin="20,30"
-                                            VerticalAlignment="Bottom">
+                                            Margin="20,40,20,0"
+                                            VerticalAlignment="Top">
+                                    <TextBlock FontSize="50"
+                                               Margin="0,0,0,5"
+                                               Style="{StaticResource iconStyle}"
+                                               Text="&#xE81D;"/>
+                                    <TextBlock FontSize="22"
+                                               Style="{StaticResource textHeadingStyle}"
+                                               Text="LOCATION DATA"/>
+                                    <TextBlock FontSize="13"
+                                               Margin="0,3,0,22"
+                                               Style="{StaticResource textControlStyle}"
+                                               Text="An approximation of beacon locations in the floor plan using Bluetooth Low Energy Triangulation."/>
                                     <lib:AppButton x:Name="toggleNodeButton"
                                                    Margin="0,0,0,5"
                                                    Text="Toggle nodes" 
@@ -231,11 +326,35 @@
                                 <Grid Grid.Column="1"
                                       Panel.ZIndex="1">
                                     <Canvas x:Name="beaconMap"
-                                            HorizontalAlignment="Stretch"
-                                            Height="50"
-                                            Margin="168.25,218,0,0"
-                                            VerticalAlignment="Top">
-                                        
+                                            HorizontalAlignment="Left"
+                                            Height="20"
+                                            Margin="196.5,212.5,0,0"
+                                            VerticalAlignment="Top"
+                                            Width="20">
+                                        <Ellipse x:Name="beaconMap1"
+                                                 Canvas.Bottom="0"
+                                                 Height="10"
+                                                 Width="10">
+                                            <Ellipse.Fill>
+                                                <SolidColorBrush Color="{StaticResource baseColor}"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <Ellipse x:Name="beaconMap2"
+                                                 Canvas.Bottom="0"
+                                                 Height="10"
+                                                 Width="10">
+                                            <Ellipse.Fill>
+                                                <SolidColorBrush Color="{StaticResource baseColor}"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <Ellipse x:Name="beaconMap3"
+                                                 Canvas.Bottom="0"
+                                                 Height="10"
+                                                 Width="10">
+                                            <Ellipse.Fill>
+                                                <SolidColorBrush Color="{StaticResource baseColor}"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
                                     </Canvas>
                                 </Grid>
                                 <StackPanel Grid.Column="1"
@@ -299,17 +418,30 @@
                                             <Ellipse x:Name="nodeMap3"
                                                      Canvas.Right="-5"
                                                      Canvas.Top="-5"
-                                                     Fill="{StaticResource alertBrush}"
                                                      Height="10"
-                                                     Width="10"/>
+                                                     Width="10">
+                                                <Ellipse.Fill>
+                                                    <SolidColorBrush Color="{StaticResource alertColor}"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
                                             <Ellipse x:Name="nodeRangeMap3"
                                                      Canvas.Right="-187.5"
                                                      Canvas.Top="-187.5"
-                                                     Fill="{StaticResource alertBrush}"
-                                                     Opacity="0.1"
+                                                     Opacity="0.5"
                                                      Stroke="{StaticResource alertBrush}"
                                                      Height="375"
-                                                     Width="375"/>
+                                                     Width="375">
+                                                <Ellipse.Fill>
+                                                    <RadialGradientBrush>
+                                                        <GradientStop Color="{StaticResource alertColor}" Offset="0.2"/>
+                                                        <GradientStop Offset="1">
+                                                            <GradientStop.Color>
+                                                                <Color A="20" B="80" G="50" R="225"/>
+                                                            </GradientStop.Color>
+                                                        </GradientStop>
+                                                    </RadialGradientBrush>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
                                         </Canvas>
                                     </Border>
                                     <Border BorderThickness="5"
@@ -338,34 +470,140 @@
                                             <Ellipse x:Name="nodeMap1"
                                                      Canvas.Left="-5"
                                                      Canvas.Top="102.5"
-                                                     Fill="{StaticResource neutralBrush}"
                                                      Height="10"
-                                                     Width="10"/>
+                                                     Width="10">
+                                                <Ellipse.Fill>
+                                                    <SolidColorBrush Color="{StaticResource neutralColor}"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
                                             <Ellipse x:Name="nodeRangeMap1"
                                                      Canvas.Left="-187.5"
                                                      Canvas.Top="-80"
-                                                     Fill="{StaticResource neutralBrush}"
-                                                     Opacity="0.1"
+                                                     Opacity="0.5"
                                                      Stroke="{StaticResource neutralBrush}"
                                                      Height="375"
-                                                     Width="375"/>
+                                                     Width="375">
+                                                <Ellipse.Fill>
+                                                    <RadialGradientBrush>
+                                                        <GradientStop Color="{StaticResource neutralColor}" Offset="0.3"/>
+                                                        <GradientStop Offset="1">
+                                                            <GradientStop.Color>
+                                                                <Color A="20" B="225" G="80" R="50"/>
+                                                            </GradientStop.Color>
+                                                        </GradientStop>
+                                                    </RadialGradientBrush>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
                                             <Ellipse x:Name="nodeMap2"
                                                      Canvas.Right="-5"
                                                      Canvas.Top="102.5"
-                                                     Fill="{StaticResource goodBrush}"
                                                      Height="10"
-                                                     Width="10"/>
+                                                     Width="10">
+                                                <Ellipse.Fill>
+                                                    <SolidColorBrush Color="{StaticResource goodColor}"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
                                             <Ellipse x:Name="nodeRangeMap2"
                                                      Canvas.Right="-187.5"
                                                      Canvas.Top="-80"
-                                                     Fill="{StaticResource goodBrush}"
-                                                     Opacity="0.1"
+                                                     Opacity="0.5"
                                                      Stroke="{StaticResource goodBrush}"
                                                      Height="375"
-                                                     Width="375"/>
+                                                     Width="375">
+                                                <Ellipse.Fill>
+                                                    <RadialGradientBrush>
+                                                        <GradientStop Color="{StaticResource goodColor}" Offset="0"/>
+                                                        <GradientStop Offset="1">
+                                                            <GradientStop.Color>
+                                                                <Color A="20" B="80" G="225" R="50"/>
+                                                            </GradientStop.Color>
+                                                        </GradientStop>
+                                                    </RadialGradientBrush>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
                                         </Canvas>
                                     </Border>
                                 </StackPanel>
+                            </Grid>
+                            <Grid x:Name="logContentGrid"
+                                  MinHeight="370">
+                                <Grid.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#00000000" 
+                                                      Offset="0.5"/>
+                                        <GradientStop Offset="1">
+                                            <GradientStop.Color>
+                                                <Color A="100" B="152" G="23" R="136"/>
+                                            </GradientStop.Color>
+                                        </GradientStop>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+                                <StackPanel>
+                                    <StackPanel Margin="0,30,0,10"
+                                            Orientation="Horizontal"
+                                            VerticalAlignment="Top">
+                                        <TextBlock FontSize="50"
+                                               Margin="22,20,10,10"
+                                               Style="{StaticResource iconStyle}"
+                                               Text="&#xEE6F;"/>
+                                        <StackPanel Margin="10,20,0,0">
+                                            <TextBlock FontSize="22"
+                                                   Style="{StaticResource textHeadingStyle}"
+                                                   Text="SCAN RESULTS"/>
+                                            <TextBlock x:Name="beaconCount"
+                                                   FontSize="13"
+                                                   Margin="0,3,0,0"
+                                                   Style="{StaticResource textControlStyle}"
+                                                   Text="A historical list of all the BLE beacons found in the vicinity."/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <Grid x:Name="logRowGrid"
+                                              Margin="20,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition x:Name="portHeader"
+                                                                  Width="0.5*"/>
+                                                <ColumnDefinition x:Name="idHeader"
+                                                                  Width="0.5*"/>
+                                                <ColumnDefinition x:Name="addressHeader"
+                                                                  Width="1.5*"/>
+                                                <ColumnDefinition x:Name="rssiHeader"
+                                                                  Width="0.75*"/>
+                                                <ColumnDefinition x:Name="txPowerHeader"
+                                                                  Width="*"/>
+                                                <ColumnDefinition x:Name="distanceHeader"
+                                                                  Width="0.75*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock FontSize="13"
+                                                       Style="{StaticResource textListStyle}"
+                                                       Text="PORT"
+                                                       Grid.Column="0"/>
+                                            <TextBlock FontSize="13"
+                                                       Style="{StaticResource textListStyle}"
+                                                       Text="ID"
+                                                       Grid.Column="1"/>
+                                            <TextBlock FontSize="13"
+                                                       Style="{StaticResource textListStyle}"
+                                                       Text="ADDRESS"
+                                                       Grid.Column="2"/>
+                                            <TextBlock FontSize="13"
+                                                       Style="{StaticResource textListStyle}"
+                                                       Text="RSSI (dBm)"
+                                                       Grid.Column="3"/>
+                                            <TextBlock FontSize="13"
+                                                       Style="{StaticResource textListStyle}"
+                                                       Text="TXPOWER (dBm)"
+                                                       Grid.Column="4"/>
+                                            <TextBlock FontSize="13"
+                                                       Style="{StaticResource textListStyle}"
+                                                       Text="DISTANCE (m)"
+                                                       Grid.Column="5"/>
+                                        </Grid>
+                                    </StackPanel>
+                                    <StackPanel x:Name="logList"
+                                                Margin="0,0,0,30"/>
+                                </StackPanel>
+
                             </Grid>
                         </StackPanel>
                     </Grid>

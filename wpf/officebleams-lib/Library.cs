@@ -108,6 +108,10 @@ namespace officebleams_lib
         {
             double x, y;
 
+            nodeDistance1 = nodeDistance1 <= 5 ? nodeDistance1 : 0;
+            nodeDistance2 = nodeDistance2 <= 5 ? nodeDistance2 : 0;
+            nodeDistance3 = nodeDistance3 <= 5 ? nodeDistance3 : 0;
+            
             if (nodeDistance1 != 0 && nodeDistance2 != 0 && nodeDistance3 != 0)
             {
                 x = nodeDistance1 * GetCosFactor(nodeDistance1, JSize.width, nodeDistance2);
@@ -120,18 +124,15 @@ namespace officebleams_lib
             }
             else if (nodeDistance1 != 0 && nodeDistance2 == 0 && nodeDistance3 != 0)
             {
-                x = nodeDistance1 * GetSinFactor(nodeDistance1, JSize.length / 2 + (ISize.length - JSize.length), nodeDistance2) * -1;
-                y = nodeDistance1 * GetCosFactor(nodeDistance1, JSize.length / 2 + (ISize.length - JSize.length), nodeDistance2);
+                x = nodeDistance1 * GetSinFactor(nodeDistance1, JSize.length / 2 + (ISize.length - JSize.length), nodeDistance3) * -1;
+                y = nodeDistance1 * GetCosFactor(nodeDistance1, JSize.length / 2 + (ISize.length - JSize.length), nodeDistance3);
             }
             else if (nodeDistance1 == 0 && nodeDistance2 != 0 && nodeDistance3 != 0)
             {
                 x = 0;
                 y = 0;
             }
-            else if ((nodeDistance1 != 0 && nodeDistance2 == 0 && nodeDistance3 == 0)
-                  || (nodeDistance1 == 0 && nodeDistance2 != 0 && nodeDistance3 == 0)
-                  || (nodeDistance1 == 0 && nodeDistance2 == 0 && nodeDistance3 != 0)
-                  || (nodeDistance1 == 0 && nodeDistance2 == 0 && nodeDistance3 == 0))
+            else if ((nodeDistance1 != 0 && nodeDistance2 == 0 && nodeDistance3 == 0) || (nodeDistance1 == 0 && nodeDistance2 != 0 && nodeDistance3 == 0) || (nodeDistance1 == 0 && nodeDistance2 == 0 && nodeDistance3 != 0) || (nodeDistance1 == 0 && nodeDistance2 == 0 && nodeDistance3 == 0))
             {
                 x = double.PositiveInfinity;
                 y = double.PositiveInfinity;
@@ -142,7 +143,14 @@ namespace officebleams_lib
                 y = double.NegativeInfinity;
             }
 
-            return (x, y);
+            if (!double.IsNaN(x) && !double.IsPositiveInfinity(x) && !double.IsNegativeInfinity(x) && !double.IsNaN(y) && !double.IsPositiveInfinity(y) && !double.IsNegativeInfinity(y))
+            {
+                return (x, y);
+            }
+            else
+            {
+                return (double.NegativeInfinity, double.NegativeInfinity);
+            }
         }
     }
 

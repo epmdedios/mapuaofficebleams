@@ -7,66 +7,76 @@
                 Viewport="0,0,100,100" 
                 Stretch="Uniform" 
                 Opacity="0.3"/>
+    
     <Color x:Key="accentColor" 
            R="136" 
            G="23" 
            B="152"
            A="255"/>
+    
     <Color x:Key="alertColor"
            R="225"
            G="50"
            B="80"
            A="255"/>
+    
     <Color x:Key="baseColor" 
            R="25" 
            G="25" 
            B="25" 
            A="255"/>
+    
     <Color x:Key="contrastColor"
            R="255"
            G="255"
            B="255"
            A="255"/>
+    
     <Color x:Key="goodColor"
            R="50"
            G="225"
            B="80"
            A="255"/>
+    
     <Color x:Key="neutralColor"
            R="50"
            G="80"
            B="225"
            A="255"/>
+    
     <SolidColorBrush x:Key="accentBrush"
                      Color="{StaticResource accentColor}"/>
     <SolidColorBrush x:Key="alertBrush"
                      Color="{StaticResource alertColor}"
                      Opacity="0.8"/>
-    <SolidColorBrush x:Key="baseBrush"
-                     Color="{StaticResource baseColor}"/>
-    <SolidColorBrush x:Key="baseChromeBrush"
-                     Color="{StaticResource baseColor}"
-                     Opacity="1"/>
-    <SolidColorBrush x:Key="baseNavigationBrush"
-                     Color="{StaticResource baseColor}"
-                     Opacity="0.5"/>
-    <SolidColorBrush x:Key="baseContentBrush"
-                     Color="{StaticResource baseColor}"
-                     Opacity="0.6"/>
-    <SolidColorBrush x:Key="contrastBrush"
-                     Color="{StaticResource contrastColor}"/>
-    <SolidColorBrush x:Key="contrastDashboardBrush"
-                     Color="{StaticResource contrastColor}"
-                     Opacity="0.5"/>
     <SolidColorBrush x:Key="goodBrush"
                      Color="{StaticResource goodColor}"
                      Opacity="0.8"/>
     <SolidColorBrush x:Key="neutralBrush"
                      Color="{StaticResource neutralColor}"
                      Opacity="0.8"/>
+    
+    <SolidColorBrush x:Key="baseNavigationBrush"
+                     Color="{StaticResource baseColor}"
+                     Opacity="0.5"/>
+    <SolidColorBrush x:Key="baseContentBrush"
+                     Color="{StaticResource baseColor}"
+                     Opacity="0.8"/>
     <SolidColorBrush x:Key="statusBrush"
                      Color="{StaticResource accentColor}"
                      Opacity="0.5"/>
+    
+    <SolidColorBrush x:Key="baseBrush"
+                     Color="{StaticResource baseColor}"/>
+    <SolidColorBrush x:Key="baseChromeBrush"
+                     Color="{StaticResource baseColor}"
+                     Opacity="1"/>
+    <SolidColorBrush x:Key="contrastBrush"
+                     Color="{StaticResource contrastColor}"/>
+    <SolidColorBrush x:Key="contrastDashboardBrush"
+                     Color="{StaticResource contrastColor}"
+                     Opacity="0.5"/>
+    
     <Style x:Key="iconStyle"
            TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily"
@@ -74,7 +84,7 @@
         <Setter Property="Foreground"
                 Value="{StaticResource contrastBrush}"/>
         <Setter Property="TextOptions.TextFormattingMode"
-                Value="Display"/>
+                Value="Ideal"/>
         <Setter Property="TextOptions.TextHintingMode"
                 Value="Animated"/>
         <Setter Property="TextOptions.TextRenderingMode"
@@ -84,12 +94,14 @@
         <Setter Property="VerticalAlignment"
                 Value="Center"/>
     </Style>
+    
     <Style x:Key="iconListStyle"
            TargetType="{x:Type TextBlock}"
            BasedOn="{StaticResource iconStyle}">
         <Setter Property="Margin"
                 Value="-5,0,0,0"/>
     </Style>
+    
     <Style x:Key="textStyle"
            TargetType="{x:Type TextBlock}">
         <Setter Property="FontFamily"
@@ -107,24 +119,28 @@
         <Setter Property="VerticalAlignment"
                 Value="Center"/>
     </Style>
+    
     <Style x:Key="textControlStyle"
            TargetType="{x:Type TextBlock}"
            BasedOn="{StaticResource textStyle}">
         <Setter Property="FontFamily"
                 Value="Din Pro"/>
     </Style>
+    
     <Style x:Key="textHeadingStyle"
            TargetType="{x:Type TextBlock}"
            BasedOn="{StaticResource textStyle}">
         <Setter Property="FontFamily"
                 Value="Din Pro Light"/>
     </Style>
+    
     <Style x:Key="textSubheadingStyle"
            TargetType="{x:Type TextBlock}"
            BasedOn="{StaticResource textStyle}">
         <Setter Property="FontFamily"
                 Value="Din Pro Light"/>
     </Style>
+    
     <Style x:Key="textListStyle"
            TargetType="{x:Type TextBlock}"
            BasedOn="{StaticResource textStyle}">
